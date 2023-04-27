@@ -53,6 +53,7 @@ class MovieListDTO
 class RenderTemplate
 {
     cardMovie;
+    cardShow;
 
     constructor()
     {
@@ -66,6 +67,16 @@ class RenderTemplate
                         <a href="#" class="btn btn-primary">Подробнее</a>
                     </div>
                 </div>
+            </div>
+        `;
+        this.cardShow = `
+            <div class="col-6">
+                <img src=$image class="img-fluid">
+            </div>
+            <div class="col-6">
+                <h4>$title</h4>
+                <hr>
+                <p>$description</p>
             </div>
         `
     }
@@ -88,5 +99,21 @@ class RenderTemplate
             document.getElementById("app")
                 .innerHTML += template
         }
+    }
+
+    renderShow(context)
+    {
+        let movieContext = new MovieListDTO(
+            context.title,
+            context.description,
+            context.image
+        )
+
+        let template = this.cardShow
+            .replace("$image", movieContext.image)
+            .replace("$description", movieContext.description)
+            .replace("$title", movieContext.title)
+
+        document.getElementById("app").innerHTML += template
     }
 }
