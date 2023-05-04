@@ -2,37 +2,44 @@ const data = [
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        image: "imgs/MJM7r1G-djw.jpg"
+        image: "imgs/MJM7r1G-djw.jpg",
+        genre: "Ужасы"
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        image: "imgs/MJM7r1G-djw.jpg"
+        image: "imgs/MJM7r1G-djw.jpg",
+        genre: "Комедия"
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        image: "imgs/MJM7r1G-djw.jpg"
+        image: "imgs/MJM7r1G-djw.jpg",
+        genre: "Комедия"
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        image: "imgs/MJM7r1G-djw.jpg"
+        image: "imgs/MJM7r1G-djw.jpg",
+        genre: "Ужасы"
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        image: "imgs/MJM7r1G-djw.jpg"
+        image: "imgs/MJM7r1G-djw.jpg",
+        genre: "Мелодраммы"
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        image: "imgs/MJM7r1G-djw.jpg"
+        image: "imgs/MJM7r1G-djw.jpg",
+        genre: "Мелодраммы"
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-        image: "imgs/MJM7r1G-djw.jpg"
+        image: "imgs/MJM7r1G-djw.jpg",
+        genre: "Мелодраммы"
     }
 ]
 
@@ -41,12 +48,14 @@ class MovieListDTO
     title;
     description;
     image;
+    genre;
 
     constructor(title, description, image)
     {
         this.title = title;
         this.description = description;
         this.image = image;
+        //this.genre = genre;
     }
 }
 
