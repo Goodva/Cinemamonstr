@@ -3,45 +3,54 @@ const data = [
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
         image: "imgs/MJM7r1G-djw.jpg",
-        genre: "Ужасы"
+        genre: "Ужасы",
+        rating: 5.0
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
         image: "imgs/MJM7r1G-djw.jpg",
-        genre: "Комедия"
+        genre: "Комедия",
+        rating: 3.14
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
         image: "imgs/MJM7r1G-djw.jpg",
-        genre: "Комедия"
+        genre: "Комедия",
+        rating: 7.0
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
         image: "imgs/MJM7r1G-djw.jpg",
-        genre: "Ужасы"
+        genre: "Ужасы",
+        rating: 8.8
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
         image: "imgs/MJM7r1G-djw.jpg",
-        genre: "Мелодраммы"
+        genre: "Мелодраммы",
+        rating: 4.9
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
         image: "imgs/MJM7r1G-djw.jpg",
-        genre: "Мелодраммы"
+        genre: "Мелодраммы",
+        rating: 1.4
     },
     {
         title: "Вызов",
         description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
         image: "imgs/MJM7r1G-djw.jpg",
-        genre: "Мелодраммы"
+        genre: "Мелодраммы",
+        rating: 0.5
     }
 ]
+
+var values = []
 
 class MovieListDTO
 {
@@ -56,6 +65,18 @@ class MovieListDTO
         this.description = description;
         this.image = image;
         //this.genre = genre;
+    }
+}
+
+class FilterDTO
+{
+    genre;
+    rating;
+
+    constructor(genre, rating)
+    {
+        this.genre = genre;
+        this.rating = rating;
     }
 }
 
@@ -124,5 +145,53 @@ class RenderTemplate
             .replace("$title", movieContext.title)
 
         document.getElementById("app").innerHTML += template
+    }
+}
+
+class Filter 
+{
+    getFilter()
+    {
+        values = null
+        values = data 
+        new RenderTemplate().renderAll(values) 
+    }
+    getRatingFilter()
+    {
+        values = null
+
+        for(var i = 0; i < data.length - 1; i--)
+        {
+            for(var x = 0; x < data.length; x++)
+            {
+                if(data[i].rating > data[x].rating)
+                {
+                    console.log(data[i].rating)
+                    console.log(data[x].rating)
+                }
+            }
+        }
+    }
+    getGenreFilter()
+    {
+
+    }
+    run(param )
+    {
+        switch(param)
+        {
+            case param.gere != "null" && param.rating != null:
+                this.getFilter
+                break;
+            case param.gere != "null" && param.rating == null:
+                //...
+                break;
+            case param.gere == "null" && param.rating != null:
+                //...
+                break;
+
+            default:
+                break;
+        }
     }
 }
